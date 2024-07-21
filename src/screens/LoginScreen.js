@@ -6,9 +6,10 @@ const LoginScreen = ({ navigation }) => {
   const [password, setPassword] = useState("");
 
   const handleLogin = () => {
-    if (userId === "driver" && password === "alan123") {
+    const normalizedUserId = userId.toLowerCase();
+    if (normalizedUserId === "driver" && password === "alan123") {
       navigation.navigate("Driver");
-    } else if (userId === "developer" && password === "jomal123") {
+    } else if (normalizedUserId === "developer" && password === "jomal123") {
       navigation.navigate("Developer");
     } else {
       alert("Invalid login credentials");
